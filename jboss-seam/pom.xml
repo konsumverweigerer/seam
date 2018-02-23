@@ -350,7 +350,7 @@
 			<artifactId>drools-compiler</artifactId>
 			<optional>true</optional>
 		</dependency>
-
+		
 		<dependency>
 			<groupId>org.drools</groupId>
 			<artifactId>drools-templates</artifactId>
@@ -492,10 +492,6 @@
                     <plugin>
                       <groupId>org.apache.maven.plugins</groupId>
                       <artifactId>maven-antrun-plugin</artifactId>
-                    </plugin>
-                    <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-surefire-plugin</artifactId>
                     </plugin>
                     <plugin>
                         <groupId>org.sonatype.maven.plugin</groupId>

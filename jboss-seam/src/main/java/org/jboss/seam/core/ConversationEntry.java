@@ -18,7 +18,7 @@ import org.jboss.seam.contexts.Contexts;
  * @author Gavin King
  *
  */
-public final class ConversationEntry implements Serializable, Comparable<ConversationEntry>
+public class ConversationEntry implements Serializable, Comparable<ConversationEntry>
 {
    private static final long serialVersionUID = 3624635335271963568L;
    
@@ -63,6 +63,11 @@ public final class ConversationEntry implements Serializable, Comparable<Convers
       touch();
    }
    
+   public ReentrantLock getLock()
+   {
+           return this.lock;
+   }
+
    public String getDescription() 
    {
       return description;
@@ -79,7 +84,7 @@ public final class ConversationEntry implements Serializable, Comparable<Convers
       return lastRequestTime;
    }
    
-   synchronized void touch() 
+   public synchronized void touch() 
    {
       entries.setDirty();
       lastRequestTime = System.currentTimeMillis();
@@ -204,7 +209,7 @@ public final class ConversationEntry implements Serializable, Comparable<Convers
       this.removeAfterRedirect = removeAfterRedirect;
    }
    
-   void setId(String id)
+   public void setId(String id)
    {
       this.id = id;
    }

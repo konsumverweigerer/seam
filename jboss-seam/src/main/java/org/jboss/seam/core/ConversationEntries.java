@@ -31,7 +31,7 @@ import org.jboss.seam.contexts.Contexts;
 public class ConversationEntries extends AbstractMutable implements Serializable 
 {
    private static final long serialVersionUID = 7996835952419813634L;
-   private Map<String, ConversationEntry> conversationIdEntryMap = new HashMap<String, ConversationEntry>();
+   protected Map<String, ConversationEntry> conversationIdEntryMap = new HashMap<String, ConversationEntry>();
    
    public synchronized Collection<ConversationEntry> getConversationEntries()
    {

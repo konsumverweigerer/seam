@@ -275,7 +275,7 @@ public class ResourceHome<T, T2> extends AbstractResource<T>
       T entity;
       try
       {
-         entity = reader.readFrom(entityClass, entityClass, entityClass.getAnnotations(), requestContentType, headers, is);
+         entity = (T)reader.readFrom(entityClass, entityClass, entityClass.getAnnotations(), requestContentType, headers, is);
       }
       catch (Exception e)
       {
