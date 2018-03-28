@@ -19,7 +19,7 @@ public class ClassValidator<T> implements Serializable
    private static final long serialVersionUID = -726917267535562335L;
 
    // default validator from context
-   private static final Validator validator = Validation.buildDefaultValidatorFactory().getValidator();
+   protected static final Validator validator = Validation.buildDefaultValidatorFactory().getValidator();
 
    private final Class<T> classForValidation;
 
@@ -33,4 +33,8 @@ public class ClassValidator<T> implements Serializable
       return validator.validateValue(classForValidation, propertyName, value);
    }
 
+   public Class<T> getClassForValidation()
+   {
+      return classForValidation;
+   }
 }
